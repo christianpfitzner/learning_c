@@ -25,12 +25,11 @@ int main(void)
     printf("Größe eines short ist %d Bytes ", sizeof(s));
     printf("mit einem Wertebereich von %d bis %d \n", SHRT_MIN, SHRT_MAX);
 
-    int i;
+    short i;
     printf("Größe eines int ist %d Bytes ", sizeof(i));
     printf("mit einem Wertebereich von %d bis %d \n", INT_MIN, INT_MAX);
 
 
-    // Übung:
     // Programmieren Sie die Ausgabe für die restlichen Standarddatentypen in C
 
 
