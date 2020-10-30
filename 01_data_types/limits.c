@@ -18,16 +18,25 @@
 
 int main(void)
 {
-    printf("Größe eines char ist %d Bits ", CHAR_BIT);
+    printf("Groesse eines char ist %d Bits ", CHAR_BIT);
     printf("mit einem Wertebereich von %d bis %d \n", CHAR_MIN, CHAR_MAX);
 
     short s;
-    printf("Größe eines short ist %d Bytes ", sizeof(s));
+    printf("Groesse eines short ist %d Bytes ", sizeof(s));
     printf("mit einem Wertebereich von %d bis %d \n", SHRT_MIN, SHRT_MAX);
 
     short i;
-    printf("Größe eines int ist %d Bytes ", sizeof(i));
+    printf("Groesse eines short ist %d Bytes ", sizeof(i));
+    printf("mit einem Wertebereich von %d bis %d \n", SHRT_MIN, SHRT_MAX);
+
+    int integer;
+    printf("Groesse eines int ist %d Bytes ", sizeof(integer));
     printf("mit einem Wertebereich von %d bis %d \n", INT_MIN, INT_MAX);
+
+    long long_var;
+    printf("Groesse eines long ist %d Bytes ", sizeof(long_var));
+    printf("mit einem Wertebereich von %d bis %d \n", LONG_MIN, LONG_MAX);
+
 
 
     // Programmieren Sie die Ausgabe für die restlichen Standarddatentypen in C
