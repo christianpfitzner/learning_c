@@ -29,11 +29,10 @@ int main(void)
     printf("Ihre Eingabe war %i  \n", i);
 
 
-    scanf("%ld" , &l );     // liest long dezimal ein
-    scanf("%lld", &ll);     // liest long long dezimal ein
-    scanf("%f" ,  &f );     // liest float ein (!)
-    scanf("%lf" , &d );     // liest double ein
-    scanf("%c" ,  &c );     // liest char ein
+    scanf("Eingabe von long integer %ld" ,    &l );     // liest long dezimal ein
+    scanf("Eingabe von long long int %lld",   &ll);     // liest long long dezimal ein
+    scanf("Eingabe einer Gleitkommazahl%f" ,  &f );     // liest float ein (!)
+    scanf("Eingabe eines char %c",            &c );
 
     return 0;
 }
