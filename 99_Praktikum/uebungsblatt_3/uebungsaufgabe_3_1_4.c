@@ -21,20 +21,24 @@ int main()
     double jahre;          // Dauer der Anlage in Jahren
     double zins;           // Zinssatz in Prozent
 
+
+
     // Abfrage des Startkapitals
-    printf("Geben Sie Ihr Startkapital an ");
-    scanf("%lf", &kapital);
+    {
+        printf("Geben Sie Ihr Startkapital an ");
+        scanf("%lf", &kapital);
 
-    // Abfrage der Dauer
-    printf("Wie viele Jahre moechten Sie das Geld anlegen? ");
-    scanf("%lf", &jahre);
+        // Abfrage der Dauer
+        printf("Wie viele Jahre moechten Sie das Geld anlegen? ");
+        scanf("%lf", &jahre);
 
-    // Abfrage des Zinssatzes
-    printf("Welchen Zinssatz erhalten Sie? ");
-    scanf("%lf", &zins);
+        // Abfrage des Zinssatzes
+        printf("Welchen Zinssatz erhalten Sie? ");
+        scanf("%lf", &zins);
+    }
 
     //Berechnung (Fehlerhaft)
-    printf("Kapital nach %lf Jahren ist %lf\n", kapital, kapital * pow((1 + zins / 100), jahre));
+    printf("Kapital nach %lf Jahren ist %lf\n", jahre, kapital * pow((1 + zins / 100), jahre));
 
     return 0;
 }

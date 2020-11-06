@@ -25,13 +25,12 @@ int main(void)
     scanf("%d" ,  &int_var );
     printf("Ihre Eingabe war %d \n\m", int_var);
 
-
     printf("Geben Sie eine Float-Gleitkommazahl ein: ");
     scanf("%f" ,  &float_var);
     printf("Ihre Eingabe war %f \n\n", float_var);
 
     printf("Geben Sie eine Double-Gleitkommazahl ein: ");
-    scanf("%lf" ,  &double_var);
+    scanf("%f" ,  &double_var);
     printf("Ihre Eingabe war %lf \n\n", double_var);
 
     return 0;
