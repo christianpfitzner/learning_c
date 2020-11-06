@@ -17,54 +17,23 @@
 
 int main(void)
 {
-    char c; int i; long l; long ll; float f; double d;
-
-    printf("Geben Sie eine Ganzzahl ein: ");
-    scanf("%d" ,  &i );     // liest int dezimal ein
-    printf("Ihre Eingabe war %d \n", i);
-    fflush(stdin);
-
-
-    printf("Geben Sie eine Gleitkommazahl ein: ");
-    scanf("%f", &f);
-    printf("Ihre Eingabe war %f \n", f);
+    int int_var       = 0;
+    float float_var   = 0.0f;
+    double double_var = 0.0;
+	
+	
+    printf("Geben Sie eine Integer-Ganzzahl ein: ");
+    scanf("%d" ,  &int_var );
+    printf("Ihre Eingabe war %d \n\m", int_var);
 
 
-    printf("Geben Sie eine Gleitkommazahl ein: ");
-    scanf("%f", &d);
+    printf("Geben Sie eine Float-Gleitkommazahl ein: ");
+    scanf("%f" ,  &float_var);
+    printf("Ihre Eingabe war %f \n\n", float_var);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
-    printf("Geben Sie eine Dezimal, Oktal, oder Hexzahl ein: ");
-    scanf("%i" ,  &i );     // liest int dezimal, oktal oder hexadezimal ein
-    printf("Ihre Eingabe war %i  \n", i);
-
-
-    scanf("Eingabe von long integer %ld" ,    &l );     // liest long dezimal ein
-    scanf("Eingabe von long long int %lld",   &ll);     // liest long long dezimal ein
-    scanf("Eingabe einer Gleitkommazahl%f" ,  &f );     // liest float ein (!)
-    scanf("Eingabe eines char %c",            &c );
-*/
+    printf("Geben Sie eine Double-Gleitkommazahl ein: ");
+    scanf("%lf" ,  &double_var);
+    printf("Ihre Eingabe war %lf \n\n", double_var);
     return 0;
 }
 
