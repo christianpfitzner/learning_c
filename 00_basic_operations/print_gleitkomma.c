@@ -19,14 +19,14 @@ int main(void)
     const double euler = 2.7182818284590452354;
     printf(" 2.7182818284590452354\n");
     printf("|----5----0----5----0-|\n");
-    printf("|%21f|\n" , euler);
-    printf("|%-21f|\n" , euler);
-    printf("|%+-21f|\n" , euler);
-    printf("|%021f|\n" , euler);
-    printf("|% -21f|\n" , euler);
+    printf("|%21f|\n" ,    euler);
+    printf("|%-21f|\n" ,   euler);
+    printf("|%+-21f|\n" ,  euler);
+    printf("|%021f|\n" ,   euler);
+    printf("|% -21f|\n" ,  euler);
     printf("|%-21.4f|\n" , euler);
     printf("|%-21.19f|\n", euler);
-    printf("|%21e|\n" , euler);
+    printf("|%21e|\n" ,    euler);
     printf("|%21.14E|\n" , euler);
 
 

@@ -28,7 +28,5 @@ int main(void)
     printf("%#x\n", 45054);     // 0x....
     printf("%#X\n", 45054);     // 0X....
 
-
-
     return 0;
 }
