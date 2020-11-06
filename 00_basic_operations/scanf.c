@@ -20,7 +20,8 @@ int main(void)
     int int_var       = 0;
     float float_var   = 0.0f;
     double double_var = 0.0;
-
+	
+	
     printf("Geben Sie eine Integer-Ganzzahl ein: ");
     scanf("%d" ,  &int_var );
     printf("Ihre Eingabe war %d \n\m", int_var);
@@ -33,7 +34,6 @@ int main(void)
     printf("Geben Sie eine Double-Gleitkommazahl ein: ");
     scanf("%lf" ,  &double_var);
     printf("Ihre Eingabe war %lf \n\n", double_var);
-
     return 0;
 }
 
