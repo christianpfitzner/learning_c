@@ -11,13 +11,12 @@
 
 
 #include <stdio.h>
-// #include "bayern.h"
+#include "bayern.h"
 #include "berlin.h"
 
 int main(void)
 {
     printf("Das Wahlalter im Bundesland %s fuer Landtagswahlen ist auf %d festgelegt \n", BUNDESLAND, WAHLALTER);
-
 
     return 0;
 }

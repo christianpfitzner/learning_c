@@ -22,5 +22,16 @@ int main(void)
 
   printf("Ergebnis: %.30f\n", M_PI);
 
+
+
+  int b = 10;
+  {
+      int b = 20;
+      printf("%d\n", b);
+  }
+
+  printf("%d\n", b);
+
   return 0;
+
 }
