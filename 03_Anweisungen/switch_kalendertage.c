@@ -31,7 +31,54 @@ int main(void)
     default: printf("%d? Es gibt nur 12 Monate!", month); break;
   }
 
-  printf("Der Monat %d hat %d Tage", month, days);
+    char* month_string = "";
+    switch (month)
+    {
+      case 1:
+        month_string = "Januar";
+        break;
+      case 2:
+        month_string = "Februar";
+        break;
+      case 3:
+        month_string = "März";
+        break;
+      case 4:
+        month_string = "April";
+        break;
+      case 5:
+        month_string = "Mai";
+        break;
+      case 6:
+        month_string = "Juni";
+        break;
+      case 7:
+        month_string = "Juli";
+        break;
+      case 8:
+        month_string = "August";
+        break;
+      case 9:
+        month_string = "September";
+        break;
+      case 10:
+        month_string = "Oktober";
+        break;
+      case 11:
+        month_string = "November";
+        break;
+      case 12:
+        month_string = "Dezember";
+        break;
+      default:
+        break;
+    }
+
+
+  printf("Der Monat %s hat %d Tage", month_string, days);
+
+
+
 
   return 0;
 }
