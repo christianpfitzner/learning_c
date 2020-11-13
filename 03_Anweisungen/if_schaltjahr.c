@@ -26,12 +26,12 @@ int main(void)
 
   // Anzahl an Tagen ermitteln und zuweisen:
   // Jedes vierte Jahr ist ein Schaltjahr. Außgenommen sind
-  // die Jahre, die ein neues Jahrhundert beginnen (1900, 2000, ...)
-
+  // die Jahre, die ein neues Jahrhundert beginnen (1900, 1800 , ...),
+  // allerdings sind auch Jahre, die durch 400 teilbar sind Schaltjahre.
   unsigned int days = 0;
   bool schaltjahr   = false;
 
-  if (year%4 == 0 && year%100 != 0)  // es handelt sich um ein Schaltjahr
+  if (year%4 == 0 && year%100 != 0 || year%400 == 0)  // es handelt sich um ein Schaltjahr
   {
     days       = 366;
     schaltjahr = true;
