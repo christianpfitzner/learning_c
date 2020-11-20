@@ -47,6 +47,7 @@ int main(void)
   if(schaltjahr)
   {
      printf("Das Jahr %d ist ein Schaltjahr und hat %d Tage", year, days);
+     bool blob = false;
   }
   else
   {
