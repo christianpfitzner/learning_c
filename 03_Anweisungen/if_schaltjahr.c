@@ -28,7 +28,7 @@ int main(void)
   // Jedes vierte Jahr ist ein Schaltjahr. Außgenommen sind
   // die Jahre, die ein neues Jahrhundert beginnen (1900, 1800 , ...),
   // allerdings sind auch Jahre, die durch 400 teilbar sind Schaltjahre.
-  unsigned int days = 0;
+  unsigned int days = 365;
   bool schaltjahr   = false;
 
   if (year%4 == 0 && year%100 != 0 || year%400 == 0)  // es handelt sich um ein Schaltjahr
@@ -36,11 +36,11 @@ int main(void)
     days       = 366;
     schaltjahr = true;
   }
-  else                               // kein Schaltjahr
-  {
-    days       = 365;
-    schaltjahr = false;
-  }
+//  else                               // kein Schaltjahr
+//  {
+//    days       = 365;
+//    schaltjahr = false;
+//  }
 
 
  // Ausgabe an den Benutzer
