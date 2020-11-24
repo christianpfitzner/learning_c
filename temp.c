@@ -1,107 +1,115 @@
-//
-/*---------------------------------------------------------------------
+/*---------------------------------------------------------------------------
 * Technische Hochschule Ingolstadt
-* Fakultät Elektrotechnik und Informatik - Studiengang EMB
-*----------------------------------------------------------------------
-* Thema : ...
-* Autor : Weidner Jonas
-* Datum : Erstellungsdatum
-*----------------------------------------------------------------------
+* Fakultï¿½t Elektrotchnik und Informatik - Elektrotechnik und Elektromobilitï¿½t
+*----------------------------------------------------------------------------
+* Thema: Vorfï¿½hraufgabe bruch.c
+* Autor: Bauer Lukas
+* Datum: 15.11.2020
+*----------------------------------------------------------------------------
 * Modulbeschreibung:
-* Hier beginnend
-* ...
+* Das Programm liest zwei rationale Zahlen als Bruch ein, verrechnet diese
+* mit einer gewï¿½nschten Rechenoperation anschlieï¿½end gibt das Programm
+* die Lï¿½sung als ungegï¿½rzten Bruch und als Dezimalzahl mit zwei
+* Nachkommastellen aus.
 */
-
 
 #include <stdio.h>
 
 
 int main(void)
 {
-    int zähler_1, nenner_1;
-    int zähler_2, nenner_2;
-    char r = 43; (void)(45), (void)(42), (void)47;
+    int     z1;      //Zï¿½hler 1                                                         //Initialisierung und Beschreibung der Variablen
+    int     n1;      //Nenner 1
+    int     z2;      //Zï¿½hler 2
+    int     n2;      //Nenner 2
+    char    r;       //Rechenoperator
+    float   e;       //Ergebnis Flieï¿½komma ,00
+    int     ez;      //Ergebnis Zï¿½hler
+    int     en;      //Ergebnis Nenner
 
-//einlesen der rationalen Zahlen und des Rechenzeichens
+    printf  ("Geben Sie den Zaehler des ersten Bruchs ein: ");                          //Einlesen Bruch1
+    scanf   ("%i", & z1);
+    printf  ("Geben Sie den dazugehoerigen Nenner ein: ");
+    scanf   ("%i", & n1);
 
-    printf("Geben Sie einen ganzzahligen Zähler ein: ");
-    scanf("%d", &zähler_1);
+    fflush  (stdin);
 
-    printf("Geben Sie einen ganzzahligen Nenner ein: ");
-    scanf("%d", &nenner_1);
+    printf  ("Geben Sie nun den Zaehler des zweiten Bruchs ein: ");                     //Einlesen Bruch2
+    scanf   ("%i", & z2);
+    printf  ("Geben Sie den dazugehoerigen Nenner ein: ");
+    scanf   ("%i", & n2);
 
+    fflush  (stdin);
 
-    printf("Geben Sie einen ganzzahligen Zähler ein: ");
-    scanf("%d", &zähler_2);
+    printf  ("Welche Rechenoperation (+, -, *, /,) wollen Sie durchfuehren? ");         //Einlesen des Rechenzeichens
+    scanf   ("%c", & r);
 
-    printf("Geben Sie einen ganzzahligen Nenner ein: ");
-    scanf("%d", &nenner_2);
-
-
-    if(nenner_1 == 0 || nenner_2 == 0)
-
+    if (n2 == 0 || n1 == 0)                                                             //Fehlerï¿½berprï¿½fung
     {
-    printf("Durch 0 teilen ist nicht moeglich!\n");
-    return 0;
+        printf ("Nenner darf nicht 0 sein!");                                           //Fehlerï¿½berprï¿½fung ob 0 im Nenner
+        return 0;
+    }
+
+    if (r=='+');                                                                        //Fehlerï¿½berprï¿½fung auf gï¿½ltiges Rechenzeichen
+    else if (r=='-');
+    else if (r=='*');
+    else if (r=='/');
+    else
+    {
+        printf ("\nRechenzeichen ungueltig!");
+        return 0;
     }
 
 
-    printf("Bitte geben Sie ein Rechenzeichen ein:   ");
-    fflush(stdin);
-    scanf("%c", &r);
+    printf ("\nIhre Rechnung lautet: %i|%i %c %i|%i =\n\n", z1, n1, r, z2, n2);         //Ausgabe der Rechnung
 
-    //Addition
+    printf ("Das Ergebnis lautet:");                                                    //Beginn Ergebnisausgabe
 
-    if(r == 43)
-
+    if (r =='+')                                                                        //Addition zweier Brï¿½che
     {
-    float ergebnis_zähler = zähler_1 * nenner_2 + zähler_2 * nenner_1;
-    float ergebnis_nenner = nenner_1 * nenner_2;
-    float ergebnis = (float) ergebnis_zähler / (float) ergebnis_nenner;
-
-    printf("Das Ergebnis ist: %f/%f\n", ergebnis_zähler, ergebnis_nenner);
-    printf("Auf zwei Nachkommastellen lautet das Ergebnis: %.2f\n", ergebnis);
+        if (n1==n2)                                                                     //Addition bei gleichem Nenner
+        {
+            printf (" %i|%i\n", ez= z1+ z2, en=n1);                                     //Ergebnisausgabe
+            printf ("Gekuerztes Ergebnis: %.2f\n", e= (float)ez/ (float)en);            //Ergebnis 2 Nachkommastellen
+        }
+        else                                                                            //Addition Nenner ungleich
+        {
+            int gn= n1* n2;
+            z1= gn/ n1* z1;
+            z2= gn/ n2* z2;
+            printf (" %i|%i\n", ez= z1+ z2, en=gn);                                     //Ergebnisausgabe
+            printf ("Gekuerztes Ergebnis: %.2f\n", e= (float)ez/ (float)en);            //Ergebnis 2 Nachkommastellen
+        }
     }
 
-    //Subtraktion
-
-    else if (r == 45)
-
+    if (r=='-')                                                                         //Subtraktion zweier Brï¿½che
     {
-    float ergebnis_zähler = zähler_1 * nenner_2 - zähler_2 * nenner_1;
-    float ergebnis_nenner = nenner_1 * nenner_2;
-    float ergebnis = (float) ergebnis_zähler / (float) ergebnis_nenner;
-
-    printf("Das Ergebnis ist: %f/%f\n", ergebnis_zähler, ergebnis_nenner);
-    printf("Auf zwei Nachkommastellen lautet das Ergebnis: %.2f\n", ergebnis);
+         if (n1==n2)                                                                    //Subtraktion bei gleichem Nenner
+        {
+            printf (" %i|%i\n", ez= z1- z2, en=n1);                                     //Ergebnisausgabe
+            printf ("Gekuerztes Ergebnis: %.2f\n", e= (float)ez/ (float)en);            //Ergebnis 2 Nachkommastellen
+        }
+        else                                                                            //Subtraktion Nenner ungleich
+        {
+            int gn= n1* n2;
+            z1= gn/ n1* z1;
+            z2= gn/ n2* z2;
+            printf (" %i|%i\n", ez= z1- z2, en=gn);                                     //Ergebnisausgabe
+            printf ("Gekuerztes Ergebnis: %.2f\n", e= (float)ez/ (float)en);            //Ergebnis 2 Nachkommastellen
+        }
     }
 
-    //Multiplikation
-
-    else if (r == 42)
-
+    if (r=='*')                                                                         //Multiplikation zweier Brï¿½che
     {
-    float ergebnis_zähler = zähler_1 * zähler_2;
-    float ergebnis_nenner = nenner_1 * nenner_2;
-    float ergebnis = (float) ergebnis_zähler / (float) ergebnis_nenner;
-
-    printf("Das Ergebnis ist: %f/%f\n", ergebnis_zähler, ergebnis_nenner);
-    printf("Auf zwei Nachkommastellen lautet das Ergebnis: %.2f\n", ergebnis);
+        printf (" %i|%i\n", ez= z1* z2, en= n1* n2);                                    //Ergebnisausgabe
+        printf ("Gekuerztes Ergebnis: %.2f\n", e= (float)ez/ (float)en);                //Ergebnis 2 Nachkommastellen
     }
 
-    //Division
-    else if (r == 47)
-
+    if (r=='/')                                                                         //Division zweier Brï¿½che
     {
-    float ergebnis_zähler = zähler_1 * nenner_2;
-    float ergebnis_nenner = nenner_1 * zähler_2;
-    float ergebnis = (float) ergebnis_zähler / (float) ergebnis_nenner;
-
-    printf("Das Ergebnis ist: %f/%f\n", ergebnis_zähler, ergebnis_nenner);
-    printf("Auf zwei Nachkommastellen lautet das Ergebnis: %.2f\n", ergebnis);
+        printf ("%i|%i\n", ez= z1* n2, en= n1* z2);                                     //Ergebnisausgabe
+        printf ("Gekuerztes Ergebnis: %.2f\n", e= (float)ez/ (float)en);                //Ergebnis 2 Nachkommastellen
     }
-
-
 
     return 0;
 }
