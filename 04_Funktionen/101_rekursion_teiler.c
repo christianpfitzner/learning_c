@@ -18,7 +18,8 @@
 
 #include <stdio.h>
 int ggt(int a, int b)
-{ // größter gemeinsamer Teiler
+{
+    // größter gemeinsamer Teiler
     if (b == 0)
     {
         return a;

@@ -17,8 +17,7 @@
 // Rekursive Funktion, welche eine Zahl in umgedrehter Reihenfolge ausgibt
 void drucke_umgedreht(int zahl)
 {
-
-   if(zahl != 0)                            // Abbruch der Rekursion wenn die eingegebene Zahl gleich Null ist
+    if(zahl != 0)                            // Abbruch der Rekursion wenn die eingegebene Zahl gleich Null ist
     {
         printf("%d", zahl % 10);            // gibt die letzte Stelle einer Zahl aus
         drucke_umgedreht(zahl / 10);        // Schneidet die letzte Stelle ab -> integer division

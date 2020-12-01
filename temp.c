@@ -1,51 +1,107 @@
-
-
+//
+//  main.c
+//  Vorführ2
+//
+//  Created by Lukas Sauer on 26.11.20.
+//
+//Sehr geehrter Herr Pfitzner,
+//ich würde Sie gerne bitten, kurz über mein Programm zu schauen. Vielen Dank und mit freundlichen Grüßen Lukas Sauer
+// Semester 2X
 
 #include <stdio.h>
 
-//
-//// Druckt ein einzelnes Zeichen in das Terminal
-//// Input Parameter:
-////     char         Einzelnes Ascii Zeichen, was ausgegeben wird
-//void drucke(char);
-//
-//// Macht einen Ton in Windows
-//void beep(void);
-//
-//// Funktion, welche die Zahl zwei zur�ckgibt
-//int return_2(void);
-
-
-void drucke(char c) { printf("%c", c); }
-
-void beep (void)    { printf("\a"); }
-
-int return_2(void)  { return 2; }
-
-
-
-
-
-
-
-
-
-
-
-int main(void)
+// Wie bekomme ich das * weg?  Wann brauch ich <stdlib.h>?
+//Primfaktorzerlegung im Zahlenbereich
+int main (void)
 {
-    drucke('@');
-    beep (); // Die Klammern sind notwendig!
-    printf("%d", return_2());
+    unsigned long int eingabe1=0.0, eingabe2=0.0, eingabehilf=0.0;
+    int n=0, hilf=0, hilf2=0, eres=0;
+
+    printf("positive ganzen Zahlbereich, mit Komma getrennt, eingeben:\n");
+    eres=scanf("%ld, %ld",&eingabe1, &eingabe2);
+
+    if (eingabe1>0 && eingabe2>= eingabe1 && eres==2)                       // Eingabe überprüfen
+    {
+
+        for (; eingabe1<=eingabe2; eingabe1++)                              //hochzählen von eingabe1 zu eingabe2
+        {
+            printf("%ld=", eingabe1);                                       // Ausgabe eingabe1= ...
+            eingabehilf=eingabe1;
+
+            for (n=2; n<=eingabehilf; n++)
+
+            {
+                hilf=eingabehilf%n;                                         //hochzählen von n
+                hilf2=0;
+                if (hilf==0)
+                {
+
+
+                    while (hilf2==0)                                        //alle Teiler von eingabe1 für n gesucht
+                    {
+
+                        eingabehilf=eingabehilf/n;
+                        printf(" %d *", n);
+                        hilf2=eingabehilf%n;
+
+                    }
+                }
+                else
+                {
+
+                }
+            }
+            //Primzahlüberprüfung hier einfügen
+            printf("\n");
+
+        }
+    }
+    else
+        printf("unglueltige Eingabe!\n");
+
     return 0;
 }
 
+/*
+// Primfaktorzerlegung mit einer Zahl
+int main (void)
+{
+    unsigned long int eingabe=0.0;
+    int n=0, hilf=0, hilf2=0;
 
+    printf("positive ganze Zahl eingeben:\n");
+    scanf("%ld",&eingabe);
 
+    if (eingabe>0)                                     // Eingabe auf negativen und 0 wert überprüfen
+    {
+        printf("%ld=", eingabe);                       // Ausgabe eingabe= ...
 
+        for (n=2; n<=eingabe; n++)
 
+        {
+            hilf=eingabe%n;
+            hilf2=0;
+            if (hilf==0)
+            {
+                while (hilf2==0)
+                {
+                    eingabe=eingabe/n;
+                    printf(" %d *", n);               // Ausgabe des Teilers n
+                    hilf2=eingabe%n;
 
+                }
+            }
+            else
+            {
 
+            }
+        }
 
+        printf("\n");
+    }
+    else
+        printf("unglueltige Eingabe!\n");
 
-
+    return 0;
+}
+*/

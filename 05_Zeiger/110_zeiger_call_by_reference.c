@@ -1,5 +1,10 @@
 
 
+#include <stdio.h>
+
+
+
+
 // Versuch die Variablen zu vertauschen
 void swap1(int a, int b)
 {
