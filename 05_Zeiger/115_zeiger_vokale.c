@@ -4,12 +4,15 @@
 #include <stdio.h>
 
 
-void zaehle(char c, int *vokale, int* buchstaben)
+void zaehle(char c, int * const vokale, int* const buchstaben)
 {
     ++*buchstaben;          // inkrementieren der Anzahl der Buchstaben
 
-    if (c=='a' || c=='e' || c=='i' || c=='o' || c=='u' || c=='A' || c=='E' || c=='I' || c=='O' || c=='U' )
+    if (c=='a' || c=='e' || c=='i' || c=='o' || c=='u' ||
+        c=='A' || c=='E' || c=='I' || c=='O' || c=='U' )
+    {
         ++*vokale;          // inkrementieren der Anzahl der Vokale
+    }
 }
 
 
@@ -26,6 +29,6 @@ int main(void)
         zaehle(c, &vokale, &buchstaben);
     } while (c != '\n');
 
-    printf("Der Text mit %d Buchstaben enthält %d Vokale.", buchstaben, vokale);
+    printf("Der Text mit %d Buchstaben enthält %d Vokale.", buchstaben-1, vokale);
     return 0;
 }

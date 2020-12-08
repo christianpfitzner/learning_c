@@ -5,22 +5,21 @@
 
 int main(void)
 {
-
     int a = 42;
     int *ap = &a;
 
-    printf("ap zeigt auf die Adresse %p mit dem Wert %d\n", ap, *ap);
-
-
-    (*ap)++; // inkrementieren des Wertes der Variable a. Achtung: Klammern müssen gesetzt werden
-    printf("ap zeigt auf die Adresse %p mit dem Wert %d\n", ap, *ap);
-
-
-    (*ap++); // inkrementieren des Adresswertes
-    printf("ap zeigt auf die Adresse %p mit dem Wert %d\n", ap, *ap);
-
-    (*ap++); // inkrementieren des Adresswertes
-    printf("ap zeigt auf die Adresse %p mit dem Wert %d\n", ap, *ap);
+//    printf("ap zeigt auf die Adresse %p mit dem Wert %d\n", ap, *ap);
+//
+//
+//    (*ap)++; // inkrementieren des Wertes der Variable a. Achtung: Klammern müssen gesetzt werden
+//    printf("ap zeigt auf die Adresse %p mit dem Wert %d\n", ap, *ap); // 43
+//
+//
+//    (*ap++); // inkrementieren des Adresswertes
+//    printf("ap zeigt auf die Adresse %p mit dem Wert %d\n", ap, *ap);
+//
+//    (*ap++); // inkrementieren des Adresswertes
+//    printf("ap zeigt auf die Adresse %p mit dem Wert %d\n", ap, *ap);
 
 
 

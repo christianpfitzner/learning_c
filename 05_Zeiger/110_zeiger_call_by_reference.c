@@ -21,7 +21,7 @@ void swap1(int a, int b)
 
 
 // Vertauschen der Zeiger auf Variablen
-void swap2(int *a, int *b)
+int swap2(int *a, int *b)
 {
     printf("swap2: \n");
     printf("Vorher: a: %d, b: %d\n", *a, *b);

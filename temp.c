@@ -1,30 +1,22 @@
 
+#include <stdio.h>
 
-// Verwenden Sie nach Möglichkeit immer const
 
-int function(int a,             // a ist folge Variable
-             int b,
-             int c,
-             int d)             // lokale Variablen der Funktion function
+int *max(const int *x, const int *y)
 {
-    a = 100;
-
-    return a+b;
+    return *x > *y ? x : y;
 }
-
-int function2(int a, int b) // lokale Variablen der Funktion function2
-{
-    return a*b;
-}
-
 int main(void)
 {
-    const int a = 5;
+    int a = 47, b = 11, *c = max(&a, &b);
 
+    printf("max(%d, %d) = %d\n", a, b, *c);
 
+    printf("max(%d, %d) = %d\n" , b, a, *max(&b, &a));
 
-    printf("%d \n", function(a,10));
-    printf("%d \n", function2(a,10));
+//    printf("a zeigt auf %p \n", &a);
+//    printf("b zeigt auf %p \n", &b);
+//    printf("%p\n", max(&b, &a));
 
     return 0;
 }

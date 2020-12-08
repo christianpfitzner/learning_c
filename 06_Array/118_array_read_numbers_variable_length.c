@@ -1,7 +1,15 @@
+/**************************************************************
+* 118_array_read_numbers.c
+***************************************************************
+* author: Prof. Dr. Christian Pfitzner
+* date: 2020-12-08
+***************************************************************
+*
+* Siehe Folie 118 im Skript
+**************************************************************/
 
 
 #include <stdio.h>
-
 
 
 int main(void)
@@ -21,12 +29,12 @@ int main(void)
         {
             zahlen[i] = i;
         }
+
         for (int i = 0; i < n; i++)
         {
             printf("%d ", zahlen[i]);
         }
 
     } while (n > 0);
-
-
+    // Die Schleife läuft so lange, wie keine 0 eingegeben wurde.
 }

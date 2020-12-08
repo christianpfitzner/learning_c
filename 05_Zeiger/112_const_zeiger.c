@@ -1,7 +1,7 @@
 
 
 #include <stdio.h>
-#define SHOWERROR 0
+#define SHOWERROR 1
 
 
 int main(void)
@@ -14,10 +14,10 @@ int main(void)
     p1  = &j;
     printf("p1 zeigt auf die Adresse %p mit dem Wert %d\n\n", p1, *p1);
 
-#if SHOWERROR
-    // p1 ist ein Zeiger auf ein konstantes int
-    *p1 = 42;
-#endif // SHOWERROR
+//#if SHOWERROR
+//    // p1 ist ein Zeiger auf ein konstantes int
+//    *p1 = 42;
+//#endif // SHOWERROR
 
 
     // Fall 2: Der Zeiger ist konstant, die referenzierte Variable kann verändert werden.
