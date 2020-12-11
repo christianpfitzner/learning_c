@@ -14,7 +14,7 @@
 
 int main(void)
 {
-    int n;
+    int n = 0;
 
     // generate an int array with variable length
     // the array is filled with numbers starting with 0
@@ -23,11 +23,11 @@ int main(void)
         printf("\nLänge? ");
         scanf("%d", &n);
 
-        int zahlen[n];
+        int zahlen[n];                  // Deklaration
 
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < n; i++)     // Intialisierung
         {
-            zahlen[i] = i;
+            zahlen[i] = 0;
         }
 
         for (int i = 0; i < n; i++)

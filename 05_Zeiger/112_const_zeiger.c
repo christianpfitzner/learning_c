@@ -9,7 +9,7 @@ int main(void)
 
     // Fall 1: Der Zeiger kann verändert werden, die referenzierte Variable ist konstant.
     int i = 47, j = 11;
-    const int * p1 = &i;
+    const int *p1 = &i;
     printf("p1 zeigt auf die Adresse %p mit dem Wert %d\n", p1, *p1);
     p1  = &j;
     printf("p1 zeigt auf die Adresse %p mit dem Wert %d\n\n", p1, *p1);

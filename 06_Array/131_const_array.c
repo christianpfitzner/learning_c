@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 
-void drucke(const int a[])
+void drucke(int a[])
 {
     for (int i = 0; a[i] != -1; i++)
         printf("%d ", a[i]++);

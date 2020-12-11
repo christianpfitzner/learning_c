@@ -2,21 +2,19 @@
 #include <stdio.h>
 
 
-int *max(const int *x, const int *y)
+double length(int *vec)
 {
-    return *x > *y ? x : y;
+    //return (sqrt(*vec*(*vec) + *(vec+1)**(vec+1) + *(vec+2)**(vec+2)));
+    return (vec[0]*vec[0] + vec[1]*vec[1] + vec[2]*vec[2]);
 }
+
+
 int main(void)
 {
-    int a = 47, b = 11, *c = max(&a, &b);
+    int vec[3] = {};
 
-    printf("max(%d, %d) = %d\n", a, b, *c);
+    const double l = length(&vec[0]); // &vec[0]
 
-    printf("max(%d, %d) = %d\n" , b, a, *max(&b, &a));
-
-//    printf("a zeigt auf %p \n", &a);
-//    printf("b zeigt auf %p \n", &b);
-//    printf("%p\n", max(&b, &a));
-
+    printf("Laenge des Vektors ist %lf", l);
     return 0;
 }
