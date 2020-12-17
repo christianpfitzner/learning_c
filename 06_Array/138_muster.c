@@ -37,7 +37,7 @@ void drucke(int m, int n, char a[m][n])
 
 int main(void)
 {
-    char muster[3][4] = { { 'O', '~' , 'O', ' '},
+    char muster[3][4] = { { '*', '*' , '*', '*'},
                           { ' ', '|', ' ', ' '},
                           {'\\', '=', '/', ' '} };
 

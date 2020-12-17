@@ -29,6 +29,7 @@ int main(void)
 
   printf("%p\n",  p1);      //
   (p1)++;
+  (p1)++;
   printf("%p\n",  p1);      //
 
   printf("%d\n", *p1);      //
