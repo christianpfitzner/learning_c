@@ -14,7 +14,7 @@
 
 int main(void)
 {
-    int n = 0;
+    const int n = 1;
 
     // generate an int array with variable length
     // the array is filled with numbers starting with 0

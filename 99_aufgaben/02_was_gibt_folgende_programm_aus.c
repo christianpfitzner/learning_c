@@ -1,20 +1,43 @@
-
-
 #include <stdio.h>
+
 
 int main(void)
 {
 
-  int i  = 10;
-  char c = 'c';
-
-  printf("%d\n", i);        // Ausgabe:
-  printf("%d\n", c);        // Ausgabe:
-  printf("%d\n", (++i)+c);  // Ausgabe:
+  int b = 2;
+  int a = 3;
 
 
-  printf("%c\n", c);        // Ausgabe:
-  printf("%c\n", (++i)+c);  // Ausgabe:
+  int *p1 = &a;
+  int *p2 = &b;
+
+  printf("%p\n", p1);       // 0062ff14
+  printf("%p\n", p2);       // 0062ff10
+
+  printf("%d\n", *p1);      //
+
+  printf("%d\n", *p2);      //
+
+  p1 = p2;                      // p1 hat 0062ff10
+  printf("%d\n", *p1**p2);  //
+
+  a = 1;
+  ++(p1);                   // 0062ff11
+
+  printf("%p\n",  p1);      //
+
+
+  printf("%d\n", *p1);      //
+
+  *p1 = *p2;
+
+  printf("%d\n", a);        //
+
+  printf("%d\n", b++);      //
+
+  printf("%d\n", *p1);      //
+  printf("%d\n", *p2);      //
+
 
   return 0;
 }
