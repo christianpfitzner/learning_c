@@ -12,7 +12,6 @@ int main(void)
   printf("Text: ");
   fgets(eingabe, max_char , stdin);
 
-
   printf("Eingabe war %\n", eingabe);
 
 

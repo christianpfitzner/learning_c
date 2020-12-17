@@ -1,43 +1,36 @@
 /**************************************************************
-* 136_matrix.c
+* 136_matrix_3d.c
 ***************************************************************
 * author: Prof. Dr. Christian Pfitzner
-* date: 2020-12-08
+* date: 2020-12-17
 ***************************************************************
 *
 * Siehe Folie 136 im Skript
 **************************************************************/
 
 
-
-#include <stdio.h>
-
-// Funktion zur Ausgabe einer Matrix
-// m: Anzahl der Zeilen in der Matrix
-// n: Anzahl der Spalten in der Matrix
-// matrix: 2D-Vektor
-void ausgabe(int m, int n, int matrix[m][n])
-{
-    // Ausgabe alles Zeilen -> z
-    for (int z = 0; z < m; z++)
-    {
-        // Ausgabe aller Spalten -> s
-        for (int s = 0; s < n; s++)
-        {
-            printf("%d ", matrix[z][s]);
-        }
-        printf("\n");
-    }
-    printf("\n");
-}
+// includes
+#include <stdio.h>              // printf
 
 
 int main(void)
 {
-    int a[2][3] = { {1, 2, 3}, {4, 5, 6} };
-    int b[3][2] = { {1, 2}, {3, 4}, {5, 6} };
-    ausgabe(2, 3, a);
-    ausgabe(3, 2, b);
+    // Initialisierung mit drei Ziffern zur besseren Unterscheidung
+    int arr[2][3][4] = { { {111, 112, 113, 114}, {121, 122, 123, 124}, {131, 132, 133, 134} },
+                         { {211, 212, 213, 214}, {221, 222, 223, 224}, {231, 232, 233, 234} } };
+
+    // Schleife über Matrix zur Ausgabe
+    for(unsigned int i=0 ; i<2 ; i++ )
+    {
+        for(unsigned int j=0 ; j<3 ; j++)
+        {
+            for(unsigned int k=0 ; k<4 ; k++)
+            {
+                printf("[%d][%d][%d] hat folgenden Wert %d\n", i, j, k, arr[i][j][k]);
+            }
+        }
+    }
+
     return 0;
 
 }
