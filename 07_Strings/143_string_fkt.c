@@ -6,13 +6,13 @@
 
 int main(void)
 {
-  // Eingabepuffer von 80 Zeichen inklusive \0
+  // Eingabepuffer von 40 Zeichen inklusive \0
   const unsigned int max_char = 40;
   char eingabe[max_char ];
+
   printf("Text: ");
   fgets(eingabe, max_char , stdin);
-
-  printf("Eingabe war %\n", eingabe);
+  printf("Eingabe war %s\n", eingabe);
 
 
   // strlen
@@ -24,7 +24,14 @@ int main(void)
   // kopiert einen String in einen anderen
   // Die Funktion beendet sich sobald ein \0-Zeichen vorkommt
   char string2[max_char];
+
+  eingabe[5] = '\0';
   strcpy (string2, eingabe);
+
+//  for(unsigned int i=0 ; i< max_char ; i++)
+//      string2[i] = eingabe[i];
+
+
   printf("Nach dem kopieren: %s\n", string2);
 
   strcat (eingabe, string2);

@@ -7,8 +7,8 @@
 
 int main(void)
 {
-  char thi[10] = "FHI";
-  *thi = 'T';
+  char thi[] = {'F','H','I','\0'};
+  thi[0]   = 'T'; // thi -> Gibt Adresse des ersten Elements wieder ->
 
   // Ausgabe des gesamten Strings
   printf("%s \n\n", thi);
@@ -17,7 +17,7 @@ int main(void)
   // Ausgabe Zeichen für Zeichen
   for(unsigned int i=0 ; i<10 ; ++i)
   {
-    printf("%d. Zeichen %c \n", i+1, thi[i]);
+    printf("%d. Zeichen %d \n", i+1, (int)(thi[i]));
   }
 
   return 0;
