@@ -1,4 +1,13 @@
-
+/**************************************************************
+* 141_string_introduction.c
+***************************************************************
+* author: Prof. Dr. Christian Pfitzner
+* date: 2020-12-21
+***************************************************************
+* Grundlegendes Deklarieren und Initialisieren von Strings.
+*
+* Siehe Folie 141 im Skript
+**************************************************************/
 
 
 #include <stdio.h>
