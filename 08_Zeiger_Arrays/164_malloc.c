@@ -12,7 +12,8 @@ int main(void)
     // Einlesen von neuen Namen, solange bis ein Nutzer nur Enter drückt
     for (i = 0; ; i++)
     {
-        printf("Name: "); fgets(name, sizeof name, stdin);
+        printf("Name: ");
+        fgets(name, sizeof name, stdin);
 
         if (strlen(name) <= 1)
             break;

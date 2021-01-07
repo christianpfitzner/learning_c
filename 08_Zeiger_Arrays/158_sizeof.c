@@ -32,9 +32,11 @@ int main(void)
     printf("%5u\n", sizeof c );
     printf("%5u\n", sizeof "A");
     printf("%5u\n", sizeof 'A');
+
     int v[100];
     printf("%5u\n", sizeof v[0]);
     printf("%5u\n", sizeof v );
+
     double m[30][70];
     printf("%5u\n", sizeof m[0][0]);
     printf("%5u\n", sizeof m[0] );

@@ -8,7 +8,7 @@
 int main(void)
 {
    char str[80] = "Das ist ein strtok-Beispiel. Das ist ein zweiter Satz.";
-   const char s[] = ".";   //
+   const char s[] = " -";   //
    char *token;
 
    /* get the first token */
