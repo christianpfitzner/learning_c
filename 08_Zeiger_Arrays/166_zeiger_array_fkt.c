@@ -5,7 +5,10 @@
 
 
 
-void print(char *p[])
+typedef char * String;
+
+
+void print(String p[])
 {
     for (; *p != NULL; p++)
         printf("%s\n", *p);
@@ -14,7 +17,7 @@ void print(char *p[])
 
 int main(void)
 {
-    char *liste[] = {"Bach", "Berg", NULL};
+    String liste[] = {"Bach", "Berg", NULL};
     print(liste);
     return 0;
 }

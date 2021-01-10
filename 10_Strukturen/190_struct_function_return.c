@@ -19,9 +19,9 @@ struct punkt
 };
 
 
-struct punkt add(struct punkt p1, struct punkt p2)
+struct punkt add(const struct punkt p1, const struct punkt p2)
 {
-  struct punkt p = {p1.x + p2.x, p1.y + p2.y};
+  const struct punkt p = {p1.x + p2.x, p1.y + p2.y};
   return p;
 }
 
@@ -32,7 +32,6 @@ int main(void)
 
   const struct punkt c = add(a, b);
 
-  printf("(%g, %g) + (%g, %g) = (%g, %g)",
-  a.x,a.y, b.x,b.y, c.x,c.y);
+  printf("(%g, %g) + (%g, %g) = (%g, %g)", a.x,a.y, b.x,b.y, c.x,c.y);
   return 0;
 }

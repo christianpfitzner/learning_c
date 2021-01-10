@@ -16,7 +16,8 @@
 // struct to store cartesian x and y values of a 2d point
 struct punkt
 {
-  double x, y;
+  double x;
+  double y;
 };
 
 
@@ -24,8 +25,8 @@ struct punkt
 // The result is returned in p3 as a reference
 void add(struct punkt p1, struct punkt p2, struct punkt *p3)
 {
-  (*p3).x = p1.x + p2.x; // . hat höheren Rang als *
-  (*p3).y = p1.y + p2.y;
+//  (*p3).x = p1.x + p2.x; // . hat höheren Rang als *
+//  (*p3).y = p1.y + p2.y;
 
 
   // alternative Schreibweise mittels Pfeiloperator -> als Ersatz für (*p3)

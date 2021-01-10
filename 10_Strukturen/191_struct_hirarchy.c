@@ -10,22 +10,39 @@
 **************************************************************/
 
 // Struktur zum Speichern eines Namens und des Alters
-struct person {
+typedef struct person {
   char name[8];
   int alter;
-};
+} Person;
+
+typedef struct anschrift {
+  char strasse[10];
+  int hausnummer;
+  int plz;
+  char stadt[10];
+} Anschrift;
 
 // Struktur zum Speichern einer Familie
-struct familie {
+typedef struct familie {
   char name[10];
-  struct person vater, mutter, kind[2];
-};
+  Person vater, mutter, kind[2];
+  Anschrift adresse;
+} Familie;
+
+
+
+
+
+
+
+
+
+
 
 
 int main(void)
 {
-  struct familie meier = {"Meier", {"Otto", 43}, {"Helga", 39}, { {"Lisa", 5} }
-  };
+  Familie meier = {"Meier", {"Otto", 43}, {"Helga", 39}, { {"Lisa", 5}, {"Bob", 2} }   };
 
   printf("%s = %s + %s + %s", meier.name,
                               meier.vater.name,

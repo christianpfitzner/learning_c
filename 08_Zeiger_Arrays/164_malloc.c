@@ -2,11 +2,14 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
+
+
 
 int main(void)
 {
 
-    char name[80], *liste[1000];
+    char name[80], *liste[2];
     int i;
 
     // Einlesen von neuen Namen, solange bis ein Nutzer nur Enter drückt
@@ -29,5 +32,9 @@ int main(void)
     {
         printf("%s", liste[i]);
         free(liste[i]);
+        // printf("%s", liste[i]);
     }
+
+
+    // Ausführbarer Code
 }
