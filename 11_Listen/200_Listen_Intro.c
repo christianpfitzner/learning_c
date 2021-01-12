@@ -1,3 +1,14 @@
+/**************************************************************
+* 200_listen_intro.c
+***************************************************************
+* author: Prof. Dr. Christian Pfitzner
+* date: 2020-01-12
+***************************************************************
+* Einführendes Beispiel zu verketteten Listen in c
+*
+* Siehe Folie 200 im Skript
+**************************************************************/
+
 
 
 #include <stdio.h>
@@ -5,11 +16,12 @@
 
 typedef struct person {
     char *name;
-    int alter;
+    int   alter;
     struct person *next;
 } Person;
 
 
+// Funktion zum Ausgeben einer Liste mit Elementen von Personen
 void ausgabe(Person *p);
 
 
