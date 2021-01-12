@@ -30,7 +30,6 @@ void ausgabe(Person *p);
 // übergebenen Argumenten
 Person *neue_person(char *name, int alter);
 
-
 // Die Funktion add_first fügt eine neue Person am Listenanfang ein
 void add_first(Person **l, Person *p);
 
