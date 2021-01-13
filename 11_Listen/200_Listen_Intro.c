@@ -25,6 +25,11 @@ typedef struct person {
 void ausgabe(Person *p);
 
 
+// Ist es auch wieder möglich liste[0] statt *liste bei der Initialisierung
+// des Ankers zu schreiben?
+
+
+
 int main(void)
 {
     // Erzeugung der Listenelemente
@@ -35,7 +40,7 @@ int main(void)
     // Verkettung der Listenelemente
     otto .next = &helga;
     helga.next = &lisa ;
-    lisa .next = NULL;
+    lisa .next = &otto;
 
     // Erzeugung und Intialisierung des Ankers
     Person *liste = &otto;
@@ -48,9 +53,12 @@ int main(void)
 
 
 
-void ausgabe(Person *p) {
+void ausgabe(Person *p)
+{
     for (; p != NULL; p = p->next)
+    {
         printf("%s (%d)\n", p->name, p->alter);
+    }
 }
 
 

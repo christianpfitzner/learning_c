@@ -1,27 +1,29 @@
 
 
+#include <stdio.h>
 
-struct person {
+
+typedef struct person {
   char *name;
   int alter;
-};
+} Person;
 
 
-struct familie
+typedef struct familie
 {
   char *name;
-  struct person *vater, *mutter, *kind[2];
-};
+  Person *vater, *mutter, *kind[2];
+} Familie;
 
 
 int main(void)
 {
-  struct person otto  = {"Otto",  43};
-  struct person helga = {"Helga", 39};
-  struct person lisa  = {"Lisa",   5};
-  struct person bob   = {"Bob",    8};
+  Person otto  = {"Otto",  43};
+  Person helga = {"Helga", 39};
+  Person lisa  = {"Lisa",   5};
+  Person bob   = {"Bob",    8};
 
-  struct familie meier = {"Meier", &otto, &helga, { &lisa, &bob }};
+  Familie meier = {"Meier", &otto, &helga, { &lisa, &bob }};
 
   printf("%s = %s + %s + %s + %s",  meier.name,
                                     meier.vater->name,
