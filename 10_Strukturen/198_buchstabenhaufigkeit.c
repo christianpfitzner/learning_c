@@ -33,6 +33,7 @@ int main(void)
   }
 
 
+  // count letters in string
   for(unsigned int i=0 ; i<strlen(eingabe) ; i++)
   {
     const char single_letter = tolower(eingabe[i]);

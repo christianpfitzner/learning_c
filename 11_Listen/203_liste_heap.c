@@ -10,10 +10,12 @@
 **************************************************************/
 
 #include <stdio.h>
-#include <string.h> // strlen
-#include <stdlib.h> // malloc
+#include <string.h>         // strlen
+#include <stdlib.h>         // malloc
+#include <stdbool.h>        // Boolean
 
-typedef struct person {
+typedef struct person
+{
     char *name;
     int alter;
     struct person *next;
@@ -36,33 +38,56 @@ void add_first(Person **l, Person *p);
 // Die Funktion add_last fügt eine neue Person am Listenende ein
 void add_last(Person **l, Person *p) ;
 
+//Die Funktion add_in_order fügt eine Person an der "richtigen" Stelle in der Liste ein
+void add_in_order(Person **l, Person *p);
+
+// Entfernen einer Person aus der Liste
+void delete(Person **l, Person *p);
+
+// Funktion überprüft, ob zwei Personen gleich sind.
+bool equals(Person *a, Person *b);
+
+// Funktion überprüft, ob ein Element schon in der Liste eingetragen ist
+bool contains(Person *liste, Person *p);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 int main(void)
 {
     Person *liste = NULL; // leere Liste
-    while (1)
-    {
-        char name[MAX];
-        int alter;
+    add_first(&liste, neue_person("Peter", 21));
+    add_first(&liste, neue_person("Anna",  22));
+    add_first(&liste, neue_person("Micha", 23));
+    add_first(&liste, neue_person("Anne",  24));
 
-        printf("Name: ");
-        scanf("%s", name);
 
-        printf("Alter: ");
-        scanf("%d", &alter);
-        printf("\n");
-
-        if (alter == 0)
-        {
-            break;
-        }
-
-        add_first(&liste, neue_person(name, alter));
-    }
     ausgabe(liste);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Person *neue_person(char *name, int alter)
@@ -79,11 +104,29 @@ Person *neue_person(char *name, int alter)
 }
 
 
+
+
+
+
+
+
+
+
+
 void add_first(Person **l, Person *p)
 {
     p->next = *l;   // neue Person auf alte Liste zeigen lassen
-    *l = p;         // Anker auf neue Person zeigen lassen
+   *l = p;         // Anker auf neue Person zeigen lassen
 }
+
+
+
+
+
+
+
+
+
 
 
 void add_last(Person **l, Person *p)
@@ -96,13 +139,100 @@ void add_last(Person **l, Person *p)
     *l = p; // letzten Anker auf neue Person zeigen lassen
 }
 
-void ausgabe(Person *p) {
+
+
+
+
+
+
+
+
+
+void ausgabe(Person *p)
+{
     for (; p != NULL; p = p->next)
     {
         printf("%s (%d)\n", p->name, p->alter);
     }
 }
 
+
+
+
+
+
+
+
+
+
+void add_in_order(Person **l, Person *p)
+{
+    while (*l != NULL && strcmp((*l)->name, p->name) < 0)
+    {
+        l = &(*l)->next;
+    }
+
+    p->next = *l;
+    *l = p;
+}
+
+
+
+
+
+
+
+
+
+
+bool equals(Person *a, Person *b)
+{
+    // Überprüft ob Alter und Name gleich sind
+    return strcmp(a->name, b->name) == 0 && a->alter == b->alter;
+}
+
+
+
+
+
+
+
+
+
+
+bool contains(Person *liste, Person *p)
+{
+    // solange die Liste durchgehen bis das Listenende erreicht ist
+    // oder das Element in der Liste gefunden wurde
+    while (liste != NULL && !equals(liste, p))
+    {
+        liste = liste->next;
+    }
+    return liste != NULL;
+}
+
+
+
+
+
+
+
+
+
+
+void delete(Person **l, Person *p)
+{
+    while (*l != NULL && !equals(*l, p))
+    {
+        l = &(*l)->next;
+    }
+    if (*l != NULL)
+    {
+        p = *l;
+        *l = (*l)->next;
+        free(p);
+    }
+}
 
 
 
