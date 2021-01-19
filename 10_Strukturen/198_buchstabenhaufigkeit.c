@@ -44,7 +44,6 @@ int main(void)
       {
         buchstabenliste[j].frequency++;
       }
-
     }
   }
 

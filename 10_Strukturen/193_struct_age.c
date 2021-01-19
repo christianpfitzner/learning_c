@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 
-typedef char* String;
+typedef char * String;
 
 struct person
 {

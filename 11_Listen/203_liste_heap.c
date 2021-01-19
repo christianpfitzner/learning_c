@@ -55,8 +55,10 @@ bool contains(Person *liste, Person *p);
 
 
 
-
-
+void add_person_to_list(Person *liste[], char *name, int alter)
+{
+    add_first(liste, neue_person(name, alter));
+}
 
 
 
@@ -66,11 +68,29 @@ bool contains(Person *liste, Person *p);
 int main(void)
 {
     Person *liste = NULL; // leere Liste
+
+    add_person_to_list(&liste, "Bob", 22);
+
     add_first(&liste, neue_person("Peter", 21));
     add_first(&liste, neue_person("Anna",  22));
     add_first(&liste, neue_person("Micha", 23));
     add_first(&liste, neue_person("Anne",  24));
+    add_first(&liste, neue_person("Anne",  24));
+    add_first(&liste, neue_person("Anne",  24));
+    add_first(&liste, neue_person("Anne",  24));
+    add_first(&liste, neue_person("Anne",  24));
+    add_first(&liste, neue_person("Anne",  24));
+    add_first(&liste, neue_person("Anne",  24));
+    add_first(&liste, neue_person("Anne",  24));
 
+
+    delete(&liste, neue_person("Anne",  24));
+
+//    Person *anne = neue_person("Anne",  24);
+//    if(contains(liste, anne))
+//    {
+//       add_last( &liste, anne );
+//    }
 
     ausgabe(liste);
 
@@ -115,8 +135,11 @@ Person *neue_person(char *name, int alter)
 
 void add_first(Person **l, Person *p)
 {
-    p->next = *l;   // neue Person auf alte Liste zeigen lassen
-   *l = p;         // Anker auf neue Person zeigen lassen
+    if(!contains(*l,p))
+    {
+        p->next = *l;   // neue Person auf alte Liste zeigen lassen
+        *l = p;         // Anker auf neue Person zeigen lassen
+    }
 }
 
 
@@ -131,12 +154,15 @@ void add_first(Person **l, Person *p)
 
 void add_last(Person **l, Person *p)
 {
-    while (*l != NULL)
+    if(!contains(*l,p))
     {
-        l = &(*l)->next; // von Anker zu Anker wandern
-    }
+        while (*l != NULL)
+        {
+            l = &(*l)->next; // von Anker zu Anker wandern
+        }
 
-    *l = p; // letzten Anker auf neue Person zeigen lassen
+        *l = p; // letzten Anker auf neue Person zeigen lassen
+    }
 }
 
 
