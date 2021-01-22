@@ -17,7 +17,6 @@ int zahlensumme(char *text)
          }
 
          int zahl = 0;
-
          while (text[i] != '\0' && isdigit(text[i]))
          {
 
