@@ -1,4 +1,13 @@
-
+/**************************************************************
+* 143_string_fkt.c
+***************************************************************
+* author: Prof. Dr. Christian Pfitzner
+* date: 2021-12-01
+***************************************************************
+* Grundlegendes Deklarieren und Initialisieren von Strings.
+*
+* Siehe Folie 143 im Skript
+**************************************************************/
 
 #include <stdio.h>
 #include <string.h>

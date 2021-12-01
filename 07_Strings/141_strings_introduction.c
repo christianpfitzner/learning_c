@@ -26,7 +26,7 @@ int main(void)
   // Ausgabe Zeichen für Zeichen
   for(unsigned int i=0 ; i<10 ; ++i)
   {
-    printf("%d. Zeichen %d \n", i+1, (int)(thi[i]));
+    printf("%d. Zeichen %c \n", i+1, (thi[i]));
   }
 
   return 0;
