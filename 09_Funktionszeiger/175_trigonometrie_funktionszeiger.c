@@ -1,4 +1,12 @@
-
+/**************************************************************
+* 175_trigonometrie_funktionszeiger.c
+***************************************************************
+* author: Christian Pfitzner
+* date: 2021-11-30
+***************************************************************
+* This program  demonstrates function pointers with to
+* functions for min and max value
+**************************************************************/
 
 
 #include <stdio.h>
@@ -14,7 +22,7 @@ int main(void)
     printf("x: ");
     scanf("%lf", &x);
 
-
+    // output of all functions
     for (int i = 0; name[i] != NULL; i++)
     {
         printf( "%s(%g) = %g\n", name[i], x, funktion[i](x));

@@ -1,3 +1,13 @@
+/**************************************************************
+* 174_min_max_funktionszeiger.c
+***************************************************************
+* author: Christian Pfitzner
+* date: 2021-11-30
+***************************************************************
+* This program  demonstrates function pointers with to
+* functions for min and max value
+**************************************************************/
+
 
 #include <stdio.h>
 
