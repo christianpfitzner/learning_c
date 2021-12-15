@@ -20,3 +20,18 @@ int main(void)
    }
    return 0;
 }
+
+
+// the following programming part cases a big memory issue
+// while free is never called
+// First the RAM will be written with 100 percent;
+// Next the hard drive will start swapping.
+
+//int main(void)
+//{
+//   while(1)
+//   {
+//      char *pointer = malloc(1);
+//   }
+//   return 0;
+//}
