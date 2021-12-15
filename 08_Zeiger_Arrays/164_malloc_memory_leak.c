@@ -1,3 +1,16 @@
+/**************************************************************
+* 164_memory_leak.c
+***************************************************************
+* author: Prof. Dr. Christian Pfitzner
+* date: 2021-12-15
+***************************************************************
+* Das folgende Programm zeigt die Verwendung der Funktion
+* malloc.
+* Im nachfolgenden -- einkommentierten Fall -- wird bewust
+* der Aufruf der Funktion free() ausgelassen, was dazu führt
+* das der Arbeitsspeicher zügig vollläuft.
+**************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 
