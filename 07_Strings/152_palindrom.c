@@ -24,7 +24,7 @@ bool ist_palindrom(String s)
 
 int main(void)
 {
-  String s1 = "Lagerregal", s2 = "Rentner";
+  String s1 = "Lagerregal", s2 = "ErikafeuertnuruntreueFakire";
   printf("%s: %d\n", s1, ist_palindrom(s1));
   printf("%s: %d\n", s2, ist_palindrom(s2));
 
