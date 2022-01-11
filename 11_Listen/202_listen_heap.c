@@ -79,6 +79,12 @@ int main(void)
 {
     Person *liste = NULL;  // Liste ohne Inhalt
 
+    printf("Size of person: %d Bytes", sizeof(Person));
+    printf("name:  %d\n", sizeof(char *));
+    printf("alter: %d\n", sizeof(long long));
+    printf("next:  %d\n", sizeof(Person*));
+
+
     while (1)
     {
         char name[MAX];
