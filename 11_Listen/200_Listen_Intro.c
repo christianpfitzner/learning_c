@@ -12,35 +12,30 @@
 
 
 #include <stdio.h>
-
-
 typedef struct person {
     char *name;
     int   alter;
     struct person *next;
 } Person;
 
-
 // Funktion zum Ausgeben einer Liste mit Elementen von Personen
 void ausgabe(Person *p);
 
-
 // Ist es auch wieder möglich liste[0] statt *liste bei der Initialisierung
 // des Ankers zu schreiben?
-
-
-
 int main(void)
 {
     // Erzeugung der Listenelemente
     Person otto  = {"Otto" , 45};
     Person helga = {"Helga", 39};
     Person lisa  = {"Lisa" , 5};
+    Person kerstin= {"Kerstin", 11};
 
     // Verkettung der Listenelemente
     otto .next = &helga;
     helga.next = &lisa ;
-    lisa .next = &otto;
+    lisa .next = &kerstin;
+    kerstin.next = NULL;
 
     // Erzeugung und Intialisierung des Ankers
     Person *liste = &otto;
@@ -48,11 +43,7 @@ int main(void)
     // Ausgabe der gesamten Liste
     printf("Ausgabe der Liste\n");
     ausgabe(liste);
-
 }
-
-
-
 void ausgabe(Person *p)
 {
     for (; p != NULL; p = p->next)

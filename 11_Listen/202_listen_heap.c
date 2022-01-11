@@ -36,6 +36,8 @@ Person *neue_person(String name, int alter)
 {
     Person *p = malloc(sizeof(Person));
 
+//    printf("Size of liefert: %d", sizeof(Person));
+
     p->next  = NULL;
     p->alter = alter;
     p->name  = malloc(strlen(name) + 1);
@@ -56,9 +58,21 @@ void add_last(Person *liste[], Person *p)
 {
     while (*liste != NULL)
     {
-        liste = &(*liste)->next;
+        printf("%p", (*liste)->next);
+        liste = &((*liste)->next);
     }
     *liste = p;
+}
+
+void add_ascending_age(Person **l, Person *p)
+{
+    while (*l != NULL && (*l)->alter < p->alter)
+    {
+        l = &(*l)->next;
+    }
+
+    p->next = *l;
+    *l = p;
 }
 
 int main(void)
@@ -68,21 +82,28 @@ int main(void)
     while (1)
     {
         char name[MAX];
-        int alter;
+        int alter = 0;
 
         printf("Name: ");
         scanf("%s", name);
+
         printf("Alter: ");
         scanf("%d", &alter);
+
         printf("\n");
 
         if (alter == 0)
             break;
 
 
-        add_last(&liste, neue_person(name, alter));
+//        add_last(&liste, neue_person(name, alter));
+        add_ascending_age(&liste, neue_person(name, alter));
+//        printf("aktuelle Liste\n");
+//        printf("**********************\n");
     }
     ausgabe(liste);
+
+
 
 }
 

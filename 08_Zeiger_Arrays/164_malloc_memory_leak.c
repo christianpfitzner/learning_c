@@ -16,23 +16,25 @@
 
 
 
-int main(void)
-{
-   char *pointer;
-
-   while(pointer = malloc(1))
-   {
-      // ueberpruefung, ob speicher reserviert werden konnte
-      if(NULL == pointer)
-      {
-         fprintf(stderr, "Speicherplatzmangel!!\n");
-         return EXIT_FAILURE;
-      }
-      free(pointer);
-      /* Tu was mit dem reservierten Speicher. */
-   }
-   return 0;
-}
+//int main(void)
+//{
+//   char *pointer;
+//
+//   while(pointer = malloc(1))
+//   {
+//      // ueberpruefung, ob speicher reserviert werden konnte
+//      if(NULL == pointer)
+//      {
+//         fprintf(stderr, "Speicherplatzmangel!!\n");
+//         return EXIT_FAILURE;
+//      }
+//      /* Tu was mit dem reservierten Speicher. */
+//
+//
+//
+//   }
+//   return 0;
+//}
 
 
 // the following programming part cases a big memory issue
@@ -40,11 +42,15 @@ int main(void)
 // First the RAM will be written with 100 percent;
 // Next the hard drive will start swapping.
 
-//int main(void)
-//{
-//   while(1)
-//   {
-//      char *pointer = malloc(1);
-//   }
-//   return 0;
-//}
+int main(void)
+{
+   while(1)
+   {
+      double *pointer = malloc(8);
+
+      // fancy code ...
+
+//      free(pointer);
+   }
+   return 0;
+}

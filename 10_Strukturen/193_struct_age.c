@@ -12,16 +12,15 @@ struct person
   int alter;
 };
 
-
 typedef struct person Person;
 typedef Person * PersonPtr;
 
 
-PersonPtr juengster_einwohner(PersonPtr liste[])
+PersonPtr juengster_einwohner(Person *liste[])
 {
   // der Zeiger j zeigt auf das erste Listenelement
 //  PersonPtr j = *liste;
-  PersonPtr j = liste[0];
+  Person *j = liste[0];
 
   // iterieren über alle Elemente in der Liste,
   // solange bis das Ende der Liste erreicht ist
@@ -32,18 +31,14 @@ PersonPtr juengster_einwohner(PersonPtr liste[])
       if ((liste[i])->alter < j->alter)
       {
         j = liste[i]; // Doch nicht!
+        printf("aktuell juengste Person: %s mit Alter %d", j->name, j->alter);
+
       }
   }
-
   return j;
 }
-
-
-
 // Ist *liste in Z.22 die Adresse der ersten Person?
 // Wieso schreibt man nicht Person *j = liste; ?
-
-
 int main(void)
 {
   Person otto  = {"Otto",  43};
@@ -51,10 +46,8 @@ int main(void)
   Person lisa  = {"Lisa",   5};
 
   // Listen sind in c Arrays mit Pointern auf Strukturen
-  PersonPtr gemeinde[] = {&otto, &helga, &lisa, NULL};
-
-  PersonPtr j          = juengster_einwohner(gemeinde);
-
+  Person *gemeinde[] = {&otto, &helga, &lisa, NULL};
+  PersonPtr j        = juengster_einwohner(gemeinde);
 
   printf("Jüngster Einwohner: %s (%d)", j->name, j->alter);
 

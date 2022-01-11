@@ -13,10 +13,9 @@ typedef struct
 } Letter;
 
 
-
-
 int main(void)
 {
+  // eingabe
   printf("Das Programm zaehlt die Anzahl unterschiedlicher Buchstaben in einem Text:  \n");
 
   char eingabe[80];
@@ -25,12 +24,18 @@ int main(void)
 
   Letter buchstabenliste[26];
 
-  // initialize buchstabenliste
   for(unsigned int i=0 ; i<26 ; i++)
   {
-    buchstabenliste[i].letter    = (int)('a') + i;
-    buchstabenliste[i].frequency = 0;
+      buchstabenliste[i].letter    = 'a'+i;
+      buchstabenliste[i].frequency = 0;
   }
+
+  // initialize buchstabenliste
+//  for(unsigned int i=0 ; i<26 ; i++)
+//  {
+//    buchstabenliste[i].letter    = (int)('a') + i;
+//    buchstabenliste[i].frequency = 0;
+//  }
 
 
   // count letters in string
@@ -43,18 +48,32 @@ int main(void)
       if(single_letter == buchstabenliste[j].letter)
       {
         buchstabenliste[j].frequency++;
+        break;
       }
     }
   }
 
   // print the frequency of each letter from the test
-  for(unsigned int i=0 ; i<26 ; i++)
+  for(unsigned int j=0 ; j<strlen(eingabe) ; j++)
   {
-    if(buchstabenliste[i].frequency > 0)
-    {
-      printf("%c: %d \n", buchstabenliste[i].letter, buchstabenliste[i].frequency);
-    }
+      Letter *highest_count;
+      for(unsigned int i=0 ; i<26 ; i++)
+      {
+        if(buchstabenliste[i].frequency > highest_count->frequency)
+        {
+            highest_count = &buchstabenliste[i];
+//            highest_count->frequency= buchstabenliste[i].frequency;
+//            highest_count->letter   = buchstabenliste[i].letter;
+        }
+      }
+      if(highest_count->frequency > 0)
+      {
+         printf("%c: %d\n", highest_count->letter, highest_count->frequency);
+         highest_count->frequency = 0;
+      }
   }
+
+
 
 
   return 0 ;
